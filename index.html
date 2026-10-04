@@ -1,0 +1,1837 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<!-- =====================================================
+     ✏️ EDIT HERE — SIRF IS PART KO CHANGE KARNA HAI
+     ===================================================== -->
+
+<title>Vaishnav Click × Sirohi Click | Rajasthan Creator</title>
+
+<meta name="description"
+content="Vaishnav Click × Sirohi Click — Rajasthan Photography, Cinematic Reels, Editing & iPhone Shoots. Sirohi, Jaipur & Jodhpur.">
+
+<script>
+const SITE = {
+
+  /* 👤 NAME */
+  name: "VAISHNAV CLICK",
+  secondName: "SIROHI CLICK",
+
+  /* 📞 CONTACT */
+  phone: "7014136083",
+  email: "himanshuvaishnav787@gmail.com",
+
+  /* 📸 INSTAGRAM */
+  instagram1: "https://www.instagram.com/vaishnavclick/",
+  instagram2: "https://www.instagram.com/sirohiclick/",
+
+  /* 📍 LOCATION */
+  location: "Sirohi, Rajasthan",
+
+  /* 🖼️ MAIN BACKGROUNDS */
+  backgrounds: [
+    "images/hawa-mahal.jpg",
+    "images/jodhpur.jpg",
+    "images/jaipur.jpg"
+  ],
+
+  /* 🖼️ YOUR GALLERY */
+  gallery: [
+    "images/photo1.jpg",
+    "images/photo2.jpg",
+    "images/photo3.jpg",
+    "images/photo4.jpg",
+    "images/photo5.jpg",
+    "images/photo6.jpg",
+    "images/photo7.jpg",
+    "images/photo8.jpg"
+  ]
+
+};
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title"
+content="Vaishnav Click × Sirohi Click">
+
+<meta property="og:description"
+content="हर पल की एक कहानी।">
+
+<meta property="og:type" content="website">
+
+<style>
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#050505;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* =====================================================
+   LOADER
+   ===================================================== */
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:#050505;
+  z-index:99999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+
+  transition:1s;
+}
+
+.loader-logo{
+  font-size:28px;
+  letter-spacing:6px;
+  font-weight:bold;
+}
+
+.loader-logo span{
+  color:#d8aa5a;
+}
+
+.loader-line{
+  width:180px;
+  height:2px;
+  background:#333;
+  margin-top:25px;
+  overflow:hidden;
+}
+
+.loader-line div{
+  width:0%;
+  height:100%;
+  background:#d8aa5a;
+  animation:load 2s forwards;
+}
+
+@keyframes load{
+  to{
+    width:100%;
+  }
+}
+
+/* =====================================================
+   GOLD PARTICLES
+   ===================================================== */
+
+.particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:2;
+}
+
+.particle{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:#d8aa5a;
+  border-radius:50%;
+  opacity:.5;
+  animation:float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0);
+    opacity:.2;
+  }
+
+  50%{
+    transform:translateY(-100px);
+    opacity:.8;
+  }
+
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+
+  padding:20px 6%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:1000;
+
+  background:rgba(0,0,0,.2);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  transition:.4s;
+}
+
+.navbar.scrolled{
+  background:rgba(5,5,5,.9);
+  padding:15px 6%;
+}
+
+.logo{
+  font-size:19px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+.logo span{
+  color:#d8aa5a;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  font-size:13px;
+  color:#ddd;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#d8aa5a;
+}
+
+.menu{
+  display:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero{
+  height:100vh;
+  min-height:650px;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+
+  background-size:cover;
+  background-position:center;
+
+  transform:scale(1.08);
+
+  transition:
+    background-image 1.2s ease,
+    transform 8s ease;
+}
+
+.hero-bg.zoom{
+  transform:scale(1);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.78)
+    );
+}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+  max-width:1000px;
+  padding:20px;
+}
+
+.kicker{
+  color:#d8aa5a;
+  letter-spacing:7px;
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(48px,9vw,115px);
+  line-height:.9;
+  letter-spacing:-5px;
+}
+
+.hero h1 span{
+  color:#d8aa5a;
+}
+
+.hero-subtitle{
+  margin-top:30px;
+  font-size:18px;
+  color:#ddd;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  margin-top:35px;
+
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 25px;
+  border-radius:40px;
+  font-weight:bold;
+  font-size:13px;
+  transition:.4s;
+}
+
+.btn-gold{
+  background:#d8aa5a;
+  color:#090705;
+}
+
+.btn-glass{
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.scroll{
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+
+  font-size:10px;
+  letter-spacing:4px;
+  color:#aaa;
+}
+
+.scroll::after{
+  content:"";
+  display:block;
+  width:1px;
+  height:50px;
+  background:#d8aa5a;
+  margin:12px auto 0;
+}
+
+/* =====================================================
+   COMMON SECTION
+   ===================================================== */
+
+section{
+  padding:120px 7%;
+  position:relative;
+}
+
+.section-heading{
+  max-width:800px;
+  margin:0 auto 60px;
+  text-align:center;
+}
+
+.section-heading small{
+  color:#d8aa5a;
+  letter-spacing:5px;
+  font-size:11px;
+}
+
+.section-heading h2{
+  font-size:clamp(38px,6vw,70px);
+  margin-top:12px;
+  letter-spacing:-2px;
+}
+
+.section-heading p{
+  color:#999;
+  line-height:1.8;
+  margin-top:18px;
+}
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+
+.intro{
+  background:#080706;
+}
+
+.intro-grid{
+  max-width:1150px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.intro-image{
+  position:relative;
+}
+
+.intro-image img{
+  width:100%;
+  height:580px;
+  object-fit:cover;
+  border-radius:25px;
+}
+
+.image-frame{
+  position:absolute;
+  inset:20px;
+  border:1px solid rgba(216,170,90,.5);
+  border-radius:20px;
+  pointer-events:none;
+}
+
+.intro-text small{
+  color:#d8aa5a;
+  letter-spacing:5px;
+}
+
+.intro-text h2{
+  font-size:50px;
+  margin:15px 0 25px;
+}
+
+.intro-text p{
+  color:#aaa;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.stats{
+  padding-top:30px;
+  padding-bottom:30px;
+  background:#0a0908;
+}
+
+.stats-grid{
+  max-width:1000px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.stat{
+  text-align:center;
+  padding:35px 15px;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+
+.stat:last-child{
+  border:0;
+}
+
+.stat-number{
+  font-size:45px;
+  font-weight:bold;
+  color:#d8aa5a;
+}
+
+.stat p{
+  color:#888;
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* =====================================================
+   SERVICES
+   ===================================================== */
+
+.services{
+  background:#050505;
+}
+
+.services-grid{
+  max-width:1150px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.service{
+  min-height:280px;
+  padding:35px 25px;
+
+  border:1px solid rgba(216,170,90,.16);
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.015)
+    );
+
+  transition:.5s;
+}
+
+.service:hover{
+  transform:translateY(-12px);
+  border-color:#d8aa5a;
+}
+
+.service-icon{
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+.service h3{
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.service p{
+  color:#888;
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* =====================================================
+   RAJASTHAN PLACES
+   ===================================================== */
+
+.places{
+  background:#080706;
+}
+
+.place-grid{
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.place{
+  height:500px;
+  border-radius:25px;
+  overflow:hidden;
+  position:relative;
+}
+
+.place img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+}
+
+.place:hover img{
+  transform:scale(1.12);
+}
+
+.place-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      transparent 40%,
+      rgba(0,0,0,.9)
+    );
+}
+
+.place-content{
+  position:absolute;
+  bottom:30px;
+  left:30px;
+}
+
+.place-content small{
+  color:#d8aa5a;
+  letter-spacing:3px;
+}
+
+.place-content h3{
+  font-size:35px;
+  margin-top:8px;
+}
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
+
+.gallery{
+  background:#030303;
+}
+
+.gallery-grid{
+  max-width:1250px;
+  margin:auto;
+
+  columns:4 220px;
+  column-gap:14px;
+}
+
+.gallery-item{
+  position:relative;
+  margin-bottom:14px;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+.gallery-item img{
+  width:100%;
+  display:block;
+  transition:.7s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.07);
+  filter:brightness(.75);
+}
+
+.gallery-label{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+
+  padding:7px 12px;
+
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
+
+  border-radius:20px;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+/* =====================================================
+   REELS
+   ===================================================== */
+
+.reels{
+  background:
+    linear-gradient(
+      rgba(10,7,4,.92),
+      rgba(5,5,5,.96)
+    ),
+    url("images/jodhpur.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.reels-grid{
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.reel{
+  height:500px;
+  border-radius:25px;
+  overflow:hidden;
+  position:relative;
+  background:#111;
+}
+
+.reel video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.reel-placeholder{
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background:
+    linear-gradient(
+      140deg,
+      #16110c,
+      #050505
+    );
+
+  padding:30px;
+}
+
+.play{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+
+  border:1px solid #d8aa5a;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#d8aa5a;
+  font-size:22px;
+
+  margin:auto;
+}
+
+/* =====================================================
+   INSTAGRAM
+   ===================================================== */
+
+.instagram{
+  min-height:600px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.5),
+      rgba(0,0,0,.92)
+    ),
+    url("images/hawa-mahal.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+.instagram-content{
+  max-width:850px;
+}
+
+.instagram-content h2{
+  font-size:clamp(40px,7vw,80px);
+  letter-spacing:-3px;
+}
+
+.instagram-content h2 span{
+  color:#d8aa5a;
+}
+
+.instagram-content p{
+  color:#bbb;
+  line-height:1.8;
+  margin:20px 0 35px;
+}
+
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
+.contact{
+  background:#050505;
+  text-align:center;
+}
+
+.contact-card{
+  max-width:850px;
+  margin:auto;
+
+  padding:60px 30px;
+
+  border:1px solid rgba(216,170,90,.2);
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.01)
+    );
+}
+
+.contact-card h2{
+  font-size:50px;
+}
+
+.contact-info{
+  color:#aaa;
+  line-height:2.2;
+  margin:25px 0;
+}
+
+.contact-info a{
+  color:#d8aa5a;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer{
+  padding:35px 20px;
+  text-align:center;
+  background:#020202;
+  color:#666;
+  font-size:12px;
+  line-height:2;
+}
+
+footer span{
+  color:#d8aa5a;
+}
+
+/* =====================================================
+   REVEAL ANIMATION
+   ===================================================== */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    left:5%;
+    right:5%;
+
+    display:none;
+    flex-direction:column;
+
+    padding:25px;
+
+    background:rgba(5,5,5,.95);
+    border-radius:20px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .intro-grid{
+    grid-template-columns:1fr;
+  }
+
+  .intro-image img{
+    height:450px;
+  }
+
+  .services-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .place-grid{
+    grid-template-columns:1fr;
+  }
+
+  .place{
+    height:450px;
+  }
+
+  .reels-grid{
+    grid-template-columns:1fr;
+  }
+
+  .reel{
+    height:550px;
+  }
+
+}
+
+@media(max-width:550px){
+
+  section{
+    padding:80px 5%;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stat{
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .intro-text h2{
+    font-size:38px;
+  }
+
+  .contact-card h2{
+    font-size:38px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADER
+     ===================================================== -->
+
+<div id="loader">
+
+  <div class="loader-logo">
+    VAISHNAV <span>CLICK</span>
+  </div>
+
+  <div class="loader-line">
+    <div></div>
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PARTICLES
+     ===================================================== -->
+
+<div class="particles" id="particles"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="navbar" id="navbar">
+
+  <div class="logo">
+    VAISHNAV <span>CLICK</span>
+  </div>
+
+  <div class="menu" id="menu">
+    ☰
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#places">RAJASTHAN</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#reels">REELS</a>
+    <a href="#contact">CONTACT</a>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero" id="home">
+
+  <div class="hero-bg" id="heroBg"></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="kicker">
+      SIROHI • JAIPUR • JODHPUR • RAJASTHAN
+    </div>
+
+    <h1>
+      VAISHNAV
+      <span>CLICK</span>
+    </h1>
+
+    <div class="hero-subtitle">
+
+      हर पल की एक कहानी।
+      <br>
+
+      Photography • Reel Creator • Editing • iPhone Shoot
+
+    </div>
+
+    <div class="hero-buttons">
+
+      <a
+        class="btn btn-gold"
+        id="heroInstagram"
+        target="_blank">
+        INSTAGRAM ↗
+      </a>
+
+      <a
+        class="btn btn-glass"
+        href="#gallery">
+        EXPLORE WORK
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="scroll">
+    SCROLL
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+     ===================================================== -->
+
+<section class="intro" id="about">
+
+  <div class="intro-grid">
+
+    <div class="intro-image reveal">
+
+      <img
+        src="images/profile.jpg"
+        alt="Vaishnav Click Creator">
+
+      <div class="image-frame"></div>
+
+    </div>
+
+    <div class="intro-text reveal">
+
+      <small>MHARO PARICHAY</small>
+
+      <h2>
+        Rajasthan,
+        <br>
+        captured differently.
+      </h2>
+
+      <p>
+        Vaishnav Click × Sirohi Click ek creative
+        photography aur content creation platform hai.
+      </p>
+
+      <p>
+        Hum Rajasthan ke colours, culture, people,
+        architecture aur everyday moments ko cinematic
+        style mein capture karte hain.
+      </p>
+
+      <p>
+        Sirohi se lekar Jaipur ki streets aur Jodhpur
+        ki blue city tak — har jagah ek kahani hai.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+     ===================================================== -->
+
+<section class="stats">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+
+      <div class="stat-number">
+        100+
+      </div>
+
+      <p>
+        MOMENTS CAPTURED
+      </p>
+
+    </div>
+
+    <div class="stat">
+
+      <div class="stat-number">
+        3+
+      </div>
+
+      <p>
+        RAJASTHAN CITIES
+      </p>
+
+    </div>
+
+    <div class="stat">
+
+      <div class="stat-number">
+        ∞
+      </div>
+
+      <p>
+        STORIES TO CREATE
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+     ===================================================== -->
+
+<section class="services" id="services">
+
+  <div class="section-heading reveal">
+
+    <small>WHAT WE CREATE</small>
+
+    <h2>
+      Visual Stories.
+    </h2>
+
+    <p>
+      Photography se lekar reels aur editing tak —
+      ek complete creative experience.
+    </p>
+
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service reveal">
+
+      <div class="service-icon">
+        📸
+      </div>
+
+      <h3>
+        Photography
+      </h3>
+
+      <p>
+        Portraits, lifestyle, events aur Rajasthan
+        ke cinematic moments.
+      </p>
+
+    </div>
+
+
+    <div class="service reveal">
+
+      <div class="service-icon">
+        🎬
+      </div>
+
+      <h3>
+        Reels
+      </h3>
+
+      <p>
+        Instagram ke liye cinematic short-form
+        videos aur reels.
+      </p>
+
+    </div>
+
+
+    <div class="service reveal">
+
+      <div class="service-icon">
+        ✨
+      </div>
+
+      <h3>
+        Editing
+      </h3>
+
+      <p>
+        Creative colour grading, transitions aur
+        cinematic edits.
+      </p>
+
+    </div>
+
+
+    <div class="service reveal">
+
+      <div class="service-icon">
+        📱
+      </div>
+
+      <h3>
+        iPhone Shoot
+      </h3>
+
+      <p>
+        iPhone se premium-looking photos aur
+        social media content.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RAJASTHAN
+     ===================================================== -->
+
+<section class="places" id="places">
+
+  <div class="section-heading reveal">
+
+    <small>RAJASTHAN</small>
+
+    <h2>
+      The Land We Capture.
+    </h2>
+
+  </div>
+
+
+  <div class="place-grid">
+
+    <div class="place reveal">
+
+      <img
+        src="images/hawa-mahal.jpg"
+        alt="Hawa Mahal Jaipur">
+
+      <div class="place-overlay"></div>
+
+      <div class="place-content">
+
+        <small>JAIPUR</small>
+
+        <h3>
+          Hawa Mahal
+        </h3>
+
+      </div>
+
+    </div>
+
+
+    <div class="place reveal">
+
+      <img
+        src="images/jodhpur.jpg"
+        alt="Jodhpur Blue City">
+
+      <div class="place-overlay"></div>
+
+      <div class="place-content">
+
+        <small>JODHPUR</small>
+
+        <h3>
+          Blue City
+        </h3>
+
+      </div>
+
+    </div>
+
+
+    <div class="place reveal">
+
+      <img
+        src="images/jaipur.jpg"
+        alt="Jaipur Rajasthan">
+
+      <div class="place-overlay"></div>
+
+      <div class="place-content">
+
+        <small>RAJASTHAN</small>
+
+        <h3>
+          Royal Jaipur
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<section class="gallery" id="gallery">
+
+  <div class="section-heading reveal">
+
+    <small>SELECTED WORK</small>
+
+    <h2>
+      Photo Stories.
+    </h2>
+
+    <p>
+      Yahan apni favourite photographs upload karo.
+    </p>
+
+  </div>
+
+
+  <div class="gallery-grid" id="galleryGrid">
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     REELS
+     ===================================================== -->
+
+<section class="reels" id="reels">
+
+  <div class="section-heading reveal">
+
+    <small>SHORT STORIES</small>
+
+    <h2>
+      Reels & Videos.
+    </h2>
+
+    <p>
+      Apne Instagram reels ko yahan showcase karo.
+    </p>
+
+  </div>
+
+
+  <div class="reels-grid">
+
+    <div class="reel reveal">
+
+      <div class="reel-placeholder">
+
+        <div>
+
+          <div class="play">
+            ▶
+          </div>
+
+          <p style="margin-top:20px;color:#888;">
+            Add your Reel here
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="reel reveal">
+
+      <div class="reel-placeholder">
+
+        <div>
+
+          <div class="play">
+            ▶
+          </div>
+
+          <p style="margin-top:20px;color:#888;">
+            Add your Reel here
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="reel reveal">
+
+      <div class="reel-placeholder">
+
+        <div>
+
+          <div class="play">
+            ▶
+          </div>
+
+          <p style="margin-top:20px;color:#888;">
+            Add your Reel here
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INSTAGRAM
+     ===================================================== -->
+
+<section class="instagram">
+
+  <div class="instagram-content reveal">
+
+    <div class="kicker">
+      FOLLOW THE JOURNEY
+    </div>
+
+    <h2>
+      See more on
+      <span>Instagram.</span>
+    </h2>
+
+    <p>
+      Daily photographs, reels aur Rajasthan
+      ke beautiful moments ke liye Instagram par follow karo.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        class="btn btn-gold"
+        id="instagram1"
+        target="_blank">
+        @vaishnavclick
+      </a>
+
+      <a
+        class="btn btn-glass"
+        id="instagram2"
+        target="_blank">
+        @sirohiclick
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
+
+<section class="contact" id="contact">
+
+  <div class="contact-card reveal">
+
+    <div class="kicker">
+      LET'S CREATE
+    </div>
+
+    <h2>
+      Have a story?
+    </h2>
+
+    <div class="contact-info">
+
+      📍 <span id="location"></span>
+      <br>
+
+      📞
+      <a id="phoneLink">
+        <span id="phone"></span>
+      </a>
+
+      <br>
+
+      📧
+      <a id="emailLink">
+        <span id="email"></span>
+      </a>
+
+    </div>
+
+
+    <div class="hero-buttons">
+
+      <a
+        class="btn btn-gold"
+        id="whatsapp">
+        WHATSAPP
+      </a>
+
+      <a
+        class="btn btn-glass"
+        id="call">
+        CALL NOW
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+  © 2026
+  <span>
+    Vaishnav Click × Sirohi Click
+  </span>
+
+  <br>
+
+  Photography • Reels • Editing • Rajasthan
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   LOAD WEBSITE DETAILS
+   ===================================================== */
+
+document.getElementById("heroInstagram").href =
+  SITE.instagram1;
+
+document.getElementById("instagram1").href =
+  SITE.instagram1;
+
+document.getElementById("instagram2").href =
+  SITE.instagram2;
+
+document.getElementById("location").textContent =
+  SITE.location;
+
+document.getElementById("phone").textContent =
+  SITE.phone;
+
+document.getElementById("email").textContent =
+  SITE.email;
+
+document.getElementById("phoneLink").href =
+  "tel:" + SITE.phone;
+
+document.getElementById("emailLink").href =
+  "mailto:" + SITE.email;
+
+document.getElementById("call").href =
+  "tel:" + SITE.phone;
+
+document.getElementById("whatsapp").href =
+  "https://wa.me/91" + SITE.phone;
+
+
+/* =====================================================
+   HERO SLIDESHOW
+   ===================================================== */
+
+const heroBg =
+  document.getElementById("heroBg");
+
+let bgIndex = 0;
+
+function changeBackground(){
+
+  heroBg.classList.remove("zoom");
+
+  setTimeout(() => {
+
+    heroBg.style.backgroundImage =
+      `url("${SITE.backgrounds[bgIndex]}")`;
+
+    heroBg.classList.add("zoom");
+
+    bgIndex++;
+
+    if(bgIndex >= SITE.backgrounds.length){
+      bgIndex = 0;
+    }
+
+  },300);
+
+}
+
+changeBackground();
+
+setInterval(changeBackground,6000);
+
+
+/* =====================================================
+   GALLERY AUTO CREATE
+   ===================================================== */
+
+const galleryGrid =
+  document.getElementById("galleryGrid");
+
+SITE.gallery.forEach((photo,index)=>{
+
+  const item =
+    document.createElement("div");
+
+  item.className =
+    "gallery-item reveal";
+
+  item.innerHTML = `
+
+    <img
+      src="${photo}"
+      alt="Rajasthan Photography ${index+1}">
+
+    <div class="gallery-label">
+      VAISHNAV CLICK
+    </div>
+
+  `;
+
+  galleryGrid.appendChild(item);
+
+});
+
+
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+const menu =
+  document.getElementById("menu");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menu.addEventListener("click",()=>{
+
+  navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+  link.addEventListener("click",()=>{
+
+    navLinks.classList.remove("active");
+
+  });
+
+});
+
+
+/* =====================================================
+   NAVBAR SCROLL
+   ===================================================== */
+
+window.addEventListener("scroll",()=>{
+
+  const navbar =
+    document.getElementById("navbar");
+
+  if(window.scrollY > 80){
+
+    navbar.classList.add("scrolled");
+
+  }else{
+
+    navbar.classList.remove("scrolled");
+
+  }
+
+});
+
+
+/* =====================================================
+   REVEAL ANIMATION
+   ===================================================== */
+
+const revealObserver =
+  new IntersectionObserver(
+    entries=>{
+
+      entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          revealObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element=>{
+
+  revealObserver.observe(element);
+
+});
+
+
+/* =====================================================
+   GOLD PARTICLES
+   ===================================================== */
+
+const particleBox =
+  document.getElementById("particles");
+
+for(let i=0;i<35;i++){
+
+  const particle =
+    document.createElement("div");
+
+  particle.className =
+    "particle";
+
+  particle.style.left =
+    Math.random()*100 + "%";
+
+  particle.style.top =
+    Math.random()*100 + "%";
+
+  particle.style.animationDelay =
+    Math.random()*8 + "s";
+
+  particle.style.animationDuration =
+    (5 + Math.random()*7) + "s";
+
+  particleBox.appendChild(particle);
+
+}
+
+
+/* =====================================================
+   LOADER
+   ===================================================== */
+
+window.addEventListener("load",()=>{
+
+  setTimeout(()=>{
+
+    document.getElementById("loader")
+      .style.opacity="0";
+
+    setTimeout(()=>{
+
+      document.getElementById("loader")
+        .style.display="none";
+
+    },1000);
+
+  },1800);
+
+});
+
+</script>
+
+</body>
+</html>
+```
